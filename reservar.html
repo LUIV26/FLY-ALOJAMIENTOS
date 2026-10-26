@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserva directa | Lu&amp;Iv Alojamientos</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0F3D3E;--teal2:#155C5A;--sand:#F3EEE1;--gua:#F2B705;--clay:#C1622D;--ink:#1C2422;--soft:#4A5450}
+*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+body{font-family:'Work Sans',sans-serif;background:var(--sand);color:var(--ink);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',serif}
+.hero{background:radial-gradient(circle at 20% 0%,var(--teal2),var(--teal) 60%);color:var(--sand);padding:48px 22px 36px}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;font-weight:600;color:var(--gua);margin-bottom:12px}
+.hero h1{font-size:clamp(28px,7.5vw,40px);line-height:1.1;font-weight:600;max-width:560px}
+.hero p{margin-top:14px;font-size:15.5px;line-height:1.55;color:#DDEAE7;max-width:480px}
+.panel{max-width:640px;margin:-18px auto 0;padding:0 16px;position:relative}
+.box{background:#fff;border-radius:18px;padding:18px;box-shadow:0 4px 18px rgba(28,36,34,.12);border:1px solid rgba(28,36,34,.06)}
+.box h2{font-size:18px;color:var(--teal);margin-bottom:10px}
+.fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px} .fields>div{min-width:0} .fields>div:last-child{grid-column:1/-1}
+.fields label{font-size:11.5px;font-weight:600;color:var(--soft);display:block;margin-bottom:4px}
+.fields input{width:100%;padding:10px 8px;border:1px solid #cfd6d3;border-radius:10px;font:inherit;font-size:14px;background:#fff}
+.steps{margin-top:14px;font-size:13px;color:var(--soft);line-height:1.55;padding-left:18px}
+.steps li{margin-bottom:3px}
+.pay-row{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12px;padding:6px 12px;border:1px solid rgba(15,61,62,.2);border-radius:100px;color:var(--teal);background:#EAF1F0}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--teal);color:#fff;text-decoration:none;font-size:13.5px;font-weight:600;padding:11px 16px;border-radius:100px;white-space:nowrap}
+.btn.pay{background:var(--gua);color:var(--ink);margin-top:14px;width:100%}
+.lnk{font-size:12.5px;color:var(--teal);font-weight:600;text-decoration:underline;margin-top:6px;display:block;text-align:center}
+.catnav{display:flex;gap:8px;overflow-x:auto;padding:16px 16px 6px;position:sticky;top:0;z-index:10;background:var(--sand)}
+.catnav a{flex:0 0 auto;font-size:13px;font-weight:600;color:var(--teal);background:#fff;border:1px solid rgba(15,61,62,.15);padding:9px 15px;border-radius:100px;text-decoration:none;white-space:nowrap}
+section.group{padding:28px 16px 4px;max-width:640px;margin:0 auto}
+.group h2{font-size:21px;color:var(--teal)} .group .sub{font-size:13px;color:var(--soft);margin:3px 0 14px}
+.card{background:#fff;border-radius:18px;padding:18px;margin-bottom:14px;border:1px solid rgba(28,36,34,.06);position:relative}
+.card-top{display:flex;justify-content:space-between;gap:10px}
+.card h3{font-size:16.5px;line-height:1.25} .meta{font-size:12.5px;color:var(--soft);margin-top:3px}
+.rating{font-size:12.5px;font-weight:600;color:var(--clay);white-space:nowrap}
+.desc{font-size:13.5px;color:var(--soft);line-height:1.5;margin:10px 0 14px}
+.card-footer{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.price-from{font-size:12px;color:var(--soft)} .price-from b{font-size:16px;color:var(--ink)}
+.btns{display:flex;flex-direction:column;align-items:stretch}
+.badge-new{position:absolute;top:-8px;right:16px;background:var(--gua);font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:100px;text-transform:uppercase}
+.note{max-width:640px;margin:22px auto 0;padding:0 18px;font-size:12px;color:var(--soft);line-height:1.55}
+footer{margin-top:30px;padding:28px 22px 40px;background:var(--ink);color:var(--sand);text-align:center;font-size:13px;line-height:1.6}
+footer .wa{display:inline-flex;margin-top:14px;background:var(--gua);color:var(--ink);font-weight:700;padding:12px 22px;border-radius:100px;text-decoration:none}
+</style></head><body>
+<div class="hero">
+  <div class="eyebrow">Lu&amp;Iv Alojamientos · Norte de la ciudad</div>
+  <h1>Reserva directo y paga con tarjeta, Deuna o transferencia.</h1>
+  <p>Cerca de todo: a 10 minutos del aeropuerto, terminal terrestre, centro de convenciones, coliseos, malls, parque Samanes, hospitales, restaurantes y sitios turísticos.</p>
+</div>
+<div class="panel"><div class="box">
+  <h2>Tu reserva</h2>
+  <div class="fields">
+    <div><label for="ci">Entrada</label><input type="date" id="ci"></div>
+    <div><label for="co">Salida</label><input type="date" id="co"></div>
+    <div><label for="gs">Huéspedes</label><input type="number" id="gs" min="1" max="20" inputmode="numeric" placeholder="2"></div>
+  </div>
+  <ol class="steps">
+    <li>Elige fechas y toca <b>Reservar directo</b> en el alojamiento que te guste.</li>
+    <li>Te escribimos por WhatsApp para confirmar disponibilidad y el total.</li>
+    <li>Pagas con <b>tarjeta</b> (link de pago seguro), con <b>Deuna</b> o por <b>transferencia bancaria</b>.</li>
+    <li>Confirmamos tu reserva por WhatsApp con las condiciones de la estadía.</li>
+  </ol>
+  <div class="pay-row"><span class="chip">💳 Crédito / débito</span><span class="chip">📲 Deuna</span><span class="chip">🏦 Transferencia bancaria</span><span class="chip">💬 Confirmación por WhatsApp</span></div>
+  <a id="pay" class="btn pay" style="display:none" target="_blank" rel="noopener">Pagar mi reserva confirmada</a>
+</div></div>
+<div class="catnav"><a href="#habitaciones">Habitaciones privadas</a><a href="#suites">Suites completas</a><a href="#deptos">Departamentos 2 habitaciones</a><a href="#premium">Suites premium</a><a href="#casa">Casa familiar</a><a href="#combos">Propiedad completa</a></div>
+<section class="group" id="habitaciones"><h2>Habitaciones privadas</h2><div class="sub">Entrada independiente, sin cocina — ideal desde 1 noche.</div>
+<div class="card">
+  <div class="card-top"><div><h3>Habitación Ejecutiva Norte PA</h3><div class="meta">Norte de la ciudad · Planta alta · Escritorio de trabajo</div></div><div class="rating">★ 4.64</div></div>
+  <p class="desc">Nuestra habitación más reservada — self check-in, WiFi rápido y zona segura. Perfecta para viajeros de negocio.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$38/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Habitación Ejecutiva Norte PA" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/habitejecsam1" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+<div class="card"><span class="badge-new">Nuevo</span>
+  <div class="card-top"><div><h3>Habitación Ejecutiva Norte PB</h3><div class="meta">Norte de la ciudad · Planta baja · Parqueo cerrado opcional</div></div><div class="rating">★ 5.0</div></div>
+  <p class="desc">Segunda habitación ejecutiva, misma zona segura y tranquila del norte.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$28/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Habitación Ejecutiva Norte PB" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/s2ejec2pb" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-top"><div><h3>Habitación Compartida Norte PA</h3><div class="meta">2do piso · Conjunto cerrado · Uso de sala y cocina</div></div></div>
+  <p class="desc">La opción más económica: habitación privada con llave propia dentro de una suite con áreas comunes compartidas.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$18/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Habitación Compartida Norte PA" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/3pasam12hsuit" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+</section>
+<section class="group" id="suites"><h2>Suites completas</h2><div class="sub">Cocina, sala-comedor y baño privado — totalmente independiente.</div>
+<div class="card">
+  <div class="card-top"><div><h3>Suite Norte PB Full Privada</h3><div class="meta">1 habitación · Cocina · Lavadora automática</div></div></div>
+  <p class="desc">Cocina equipada, sala-comedor y patio con lavadora — ideal para estadías de varios días.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$32/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Suite Norte PB Full Privada" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/north-guayaquil-secure-private-suitpb1" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+</section>
+<section class="group" id="deptos"><h2>Departamentos 2 habitaciones</h2><div class="sub">Más espacio y privacidad para grupos pequeños o familias.</div>
+<div class="card">
+  <div class="card-top"><div><h3>Depto. Céntrico Norte 2Hab</h3><div class="meta">Norte de la ciudad · Frente a parque · Muy luminoso</div></div><div class="rating">★ 4.6</div></div>
+  <p class="desc">Zona céntrica con todo cerca: comercios, restaurantes y transporte.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$65/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Depto. Céntrico Norte 2Hab" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/polidepar-privat-gyenorte" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+<div class="card"><span class="badge-new">Nuevo</span>
+  <div class="card-top"><div><h3>Depto. 2Hab PB · Lavandería y Patio</h3><div class="meta">2 baños privados · Patio · Permite mascotas</div></div><div class="rating">★ 5.0</div></div>
+  <p class="desc">Cada habitación con baño propio, cocina completa y lavandería privada. Ideal para estadías largas.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$34/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Depto. 2Hab PB · Lavandería y Patio" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/s2habpb" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+</section>
+<section class="group" id="premium"><h2>Suites premium</h2><div class="sub">Piscina, gym, BBQ y vista — para una escapada distinta.</div>
+<div class="card">
+  <div class="card-top"><div><h3>Suite Terraza Norte · BBQ y Vista</h3><div class="meta">Terraza privada · Vista panorámica · Bosque seco tropical</div></div><div class="rating">★ 4.87</div></div>
+  <p class="desc">BBQ privado, comedor cubierto y una vista que combina ciudad y naturaleza. Ideal para escapadas de 2-3 noches.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$29/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Suite Terraza Norte · BBQ y Vista" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/rooftop-suite-north-gye-ec" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-top"><div><h3>Suite Relaxing 2Hab PA</h3><div class="meta">Norte de la ciudad · Conjunto cerrado · UPS de respaldo</div></div><div class="rating">★ 4.71</div></div>
+  <p class="desc">2 habitaciones en conjunto cerrado de solo 10 casas, con WiFi y luces activas incluso en apagones.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$32/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Suite Relaxing 2Hab PA" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/3pasam12hsuit" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+<div class="card"><span class="badge-new">Nuevo</span>
+  <div class="card-top"><div><h3>Suite Norte PB · Relax Pool&amp;Gym</h3><div class="meta">Planta baja · Piscina · Mini gym · BBQ</div></div></div>
+  <p class="desc">Suite privada con acceso a piscina, gym y BBQ del área social.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$30/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Suite Norte PB · Relax Pool&amp;Gym" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/relaxpoolgympbsuite" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+<div class="card"><span class="badge-new">Nuevo</span>
+  <div class="card-top"><div><h3>Suite RelaxPA · Pool, Gym y BBQ</h3><div class="meta">Planta alta · Mismas amenities, otra vista</div></div></div>
+  <p class="desc">La versión en planta alta de la suite con piscina, gym y BBQ compartidos.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$28/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Suite RelaxPA · Pool, Gym y BBQ" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/sam2suitepbpool" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+</section>
+<section class="group" id="casa"><h2>Casa familiar</h2><div class="sub">Para grupos grandes — todo el espacio.</div>
+<div class="card"><span class="badge-new">Nuevo</span>
+  <div class="card-top"><div><h3>Deluxe Family House · 3 Habitaciones</h3><div class="meta">Planta baja · 3.5 baños · Hasta 8 huéspedes</div></div><div class="rating">★ 4.67</div></div>
+  <p class="desc">Cada habitación con baño privado, cocina completa y patio. Ideal para familias o grupos de amigos.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$95/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Deluxe Family House · 3 Habitaciones" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/s23hpb" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+</section>
+<section class="group" id="combos"><h2>Propiedad completa</h2><div class="sub">Reserva todo el espacio — grupos, familias extendidas o eventos.</div>
+<div class="card"><span class="badge-new">Nuevo</span>
+  <div class="card-top"><div><h3>Casa Completa Norte S2 PB</h3><div class="meta">2 suites · Piscina · Gym · BBQ · Hasta 6 huéspedes</div></div></div>
+  <p class="desc">Dos suites independientes con acceso a piscina, gym y BBQ. Privacidad y espacio social.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$85/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Casa Completa Norte S2 PB" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/sam2housepoolgympb" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+<div class="card"><span class="badge-new">Nuevo</span>
+  <div class="card-top"><div><h3>Complejo Norte S2 · 5 Suites</h3><div class="meta">5 habitaciones · Piscina · Gym · BBQ · Garaje · Hasta 12 huéspedes</div></div></div>
+  <p class="desc">Dos casas conectadas con 5 espacios privados — grupos grandes, eventos o retiros.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$190/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Complejo Norte S2 · 5 Suites" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/complejonorte5suitsfullpb" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+<div class="card"><span class="badge-new">Nuevo</span>
+  <div class="card-top"><div><h3>Depto. Full Terraza BBQ PA · 4 Hab</h3><div class="meta">4 habitaciones · 7 camas · Terraza BBQ · Hasta 12 huéspedes</div></div></div>
+  <p class="desc">Departamento completo en planta alta con 4 habitaciones y terraza con BBQ.</p>
+  <div class="card-footer">
+    <div class="price-from">Desde<br><b>$150/noche</b></div>
+    <div class="btns">
+      <a class="btn book" href="#" data-name="Depto. Full Terraza BBQ PA · 4 Hab" target="_blank" rel="noopener">Reservar directo</a>
+      <a class="lnk" href="https://airbnb.com/h/deparpaterrazabbq" target="_blank" rel="noopener">Ver en Airbnb</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<p class="note">Los precios "desde" son referenciales por noche; el total final depende de fechas, número de noches y huéspedes, y se confirma por WhatsApp antes de pagar. Los datos para pagar (link de tarjeta, Deuna o cuenta bancaria) te los enviamos por WhatsApp una vez confirmada la disponibilidad. Las condiciones de cancelación y normas de la casa se envían antes del pago. También puedes reservar con las protecciones de Airbnb usando "Ver en Airbnb".</p>
+<footer><div style="font-family:Fraunces,serif;font-size:19px">Lu&amp;Iv Alojamientos</div>
+<div>Norte de la ciudad — cerca de todo</div>
+<a class="wa" id="wa-main" href="#" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a></footer>
+<script>
+var WHATSAPP="593998425668";
+var PAYMENT_LINK="";  // pega aquí tu link de cobro de Payphone (o dejar vacío para ocultar el botón)
+function fmt(d){if(!d)return "por definir";var p=d.split("-");return p[2]+"/"+p[1]+"/"+p[0];}
+function refresh(){
+  var ci=document.getElementById("ci").value, co=document.getElementById("co").value, gs=document.getElementById("gs").value;
+  if(ci){document.getElementById("co").min=ci;}
+  document.querySelectorAll(".book").forEach(function(a){
+    var msg="Hola, quiero reservar directo: *"+a.getAttribute("data-name")+"*. Entrada: "+fmt(ci)+" · Salida: "+fmt(co)+" · Huéspedes: "+(gs||"por definir")+". ¿Tienen disponibilidad y cuál es el total?";
+    a.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg);
+  });
+  document.getElementById("wa-main").href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent("Hola, quiero información para reservar directo.");
+}
+(function(){
+  var t=new Date(),m=("0"+(t.getMonth()+1)).slice(-2),d=("0"+t.getDate()).slice(-2),iso=t.getFullYear()+"-"+m+"-"+d;
+  document.getElementById("ci").min=iso; document.getElementById("co").min=iso;
+  ["ci","co","gs"].forEach(function(id){document.getElementById(id).addEventListener("input",refresh);});
+  if(PAYMENT_LINK){var p=document.getElementById("pay");p.href=PAYMENT_LINK;p.style.display="inline-flex";}
+  refresh();
+})();
+</script></body></html>
